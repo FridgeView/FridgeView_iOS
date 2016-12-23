@@ -1,0 +1,6 @@
+framework module Pods_FridgeViewUITests {
+  umbrella header "Pods-FridgeViewUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
