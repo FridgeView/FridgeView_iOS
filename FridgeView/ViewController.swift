@@ -22,22 +22,26 @@ class ViewController: UIViewController {
         showPhoto()
     }
     
+    @IBAction func demoClicked(_ sender: Any) {
+        Photos.getDemoPhoto()
+    }
+    
     func showPhoto() {
         Photos.getPhotoForUser { (encryptStrings) in
             if (encryptStrings.count == 0) {
                 print("error no images")
             } else {
                 //for i in 0..<encryptStrings.count
-                if let imageData = NSData(base64Encoded: encryptStrings[encryptStrings.count - 15], options: []) as? Data
+                if let imageData = NSData(base64Encoded: encryptStrings[0], options: []) as? Data
                 {
                     if let decodedImageData = UIImage(data: imageData) {
-                        //self.mainImg.image = decodedImageData
-                        //self.mainImg.layer.setAffineTransform(CGAffineTransform (rotationAngle: 1.5708))
-                        let rect = CGRect(x: -145, y: 110, width: self.view.frame.size.height, height: self.view.frame.size.width)
-                        let newImg = UIImageView(frame: rect)
-                        newImg.image = decodedImageData
-                        newImg.layer.setAffineTransform(CGAffineTransform (rotationAngle: 1.5708))
-                        self.view.addSubview(newImg)
+                        self.mainImg.image = decodedImageData
+                        self.mainImg.layer.setAffineTransform(CGAffineTransform (rotationAngle: 1.5708))
+//                        let rect = CGRect(x: -145, y: 110, width: self.view.frame.size.height, height: self.view.frame.size.width)
+//                        let newImg = UIImageView(frame: rect)
+//                        newImg.image = decodedImageData
+//                        newImg.layer.setAffineTransform(CGAffineTransform (rotationAngle: 1.5708))
+//                        self.view.addSubview(newImg)
                     }
                 }
             }

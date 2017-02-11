@@ -19,10 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
         let configuration = ParseClientConfiguration {
             $0.applicationId = "FVAPPID123456789bcdjk"
-            //$0.clientKey = "MZRvWYxhp46iXnT6ytiVBpbJpTmr9n1MTMFERfsD"
             $0.server = "https://fridgeview.herokuapp.com/parse"
         }
         Parse.initialize(with: configuration)
+        
+        if (User.current() != nil) {
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabBarController = mainStoryboard.instantiateViewController(withIdentifier: "tabBar") as! UITabBarController
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            self.window?.rootViewController = tabBarController
+            self.window?.makeKeyAndVisible()
+        }
+        
+        
         return true
     }
 

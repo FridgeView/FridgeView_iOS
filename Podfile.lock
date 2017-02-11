@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.2.0)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
@@ -15,17 +16,19 @@ PODS:
   - SocketRocket (0.5.1)
 
 DEPENDENCIES:
+  - Alamofire
   - Bolts
   - Parse
   - ParseLiveQuery
 
 SPEC CHECKSUMS:
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   Bolts-Swift: fa98d1b59fc1acea9b21a21306dcdca1c85e3737
   Parse: 4335d65f40cb3d43190d723144bbe1afb9c38230
   ParseLiveQuery: 4c0f3f571ba0f358a4e592cd7d4b55c95ab9655e
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
 
-PODFILE CHECKSUM: 6ed0d9550ff56db5b6c804a0b134b6f30d64ed35
+PODFILE CHECKSUM: 70d6282c2fbc4793fc7f4a7d4836901de3b6a1b5
 
 COCOAPODS: 1.0.1

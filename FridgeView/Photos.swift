@@ -23,8 +23,21 @@ class Photos: PFObject, PFSubclassing {
         return query
     }
     
+    class func getDemoPhoto(){
+        let query = queryForPhoto()
+        query.getFirstObjectInBackground { (object, error) in
+            if let object = object {
+                object["device"] =   (object["device"] as! Int) + 1
+                object.saveInBackground(block: { (success, error) in
+                    print(success)
+                })
+            }
+        }
+    }
+    
     class func getPhotoForUser(completion : @escaping ([String]) -> Void) {
         let query = queryForPhoto()
+        query.order(byDescending: "createdAt")
         query.whereKey("user", equalTo: PFUser.current())
         query.findObjectsInBackground { (photos, error) in
             if let photos = photos as? [Photos] {

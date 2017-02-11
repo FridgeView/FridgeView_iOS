@@ -10,6 +10,7 @@ target 'FridgeView' do
 	pod 'ParseLiveQuery'
 	pod 'Parse'
 	pod 'Bolts'
+    pod 'Alamofire'
 
   target 'FridgeViewTests' do
     inherit! :search_paths
