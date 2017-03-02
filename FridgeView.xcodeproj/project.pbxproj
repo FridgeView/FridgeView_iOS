@@ -13,20 +13,48 @@
 		DC3F85461DDAD04800F5FB16 /* LogIn_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3F85451DDAD04800F5FB16 /* LogIn_VC.swift */; };
 		DC3F854A1DDAD10000F5FB16 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3F85491DDAD10000F5FB16 /* logo.png */; };
 		DC3F854C1DDAE4D100F5FB16 /* SensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3F854B1DDAE4D100F5FB16 /* SensorData.swift */; };
-		DC3F854E1DDAE98C00F5FB16 /* Info_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3F854D1DDAE98C00F5FB16 /* Info_VC.swift */; };
+		DC4BD4541E5EBB3800C58A49 /* CentralHubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4BD4531E5EBB3800C58A49 /* CentralHubData.swift */; };
+		DC4BD4561E5EBB4800C58A49 /* CentralHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4BD4551E5EBB4800C58A49 /* CentralHub.swift */; };
+		DC4BD45B1E5EBB7500C58A49 /* CameraData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4BD45A1E5EBB7500C58A49 /* CameraData.swift */; };
 		DC4CCCAB1E428289006E42D9 /* RecipePuppy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4CCCAA1E428289006E42D9 /* RecipePuppy.swift */; };
 		DC4CCCAE1E4286C5006E42D9 /* Recipe_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4CCCAD1E4286C5006E42D9 /* Recipe_VC.swift */; };
+		DC8A80431E555BCB0022E09D /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A80421E555BCB0022E09D /* FoodItem.swift */; };
+		DC8A80451E555C5B0022E09D /* UserFoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A80441E555C5B0022E09D /* UserFoodItem.swift */; };
 		DCA09BF61E4C1B6D00B577A1 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA09BF51E4C1B6D00B577A1 /* RecipeCell.swift */; };
 		DCA1B6B31E4E5086000AFF41 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA1B6B21E4E5086000AFF41 /* TabBarController.swift */; };
 		DCA5A9631DD7B61700EA9E6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5A9621DD7B61700EA9E6C /* AppDelegate.swift */; };
-		DCA5A9651DD7B61700EA9E6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5A9641DD7B61700EA9E6C /* ViewController.swift */; };
 		DCA5A9681DD7B61700EA9E6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA5A9661DD7B61700EA9E6C /* Main.storyboard */; };
 		DCA5A96A1DD7B61700EA9E6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA5A9691DD7B61700EA9E6C /* Assets.xcassets */; };
 		DCA5A96D1DD7B61700EA9E6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA5A96B1DD7B61700EA9E6C /* LaunchScreen.storyboard */; };
 		DCA5A9781DD7B61700EA9E6C /* FridgeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5A9771DD7B61700EA9E6C /* FridgeViewTests.swift */; };
 		DCA5A9831DD7B61700EA9E6C /* FridgeViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5A9821DD7B61700EA9E6C /* FridgeViewUITests.swift */; };
+		DCA87AB41E67669D00175922 /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA87AB31E67669D00175922 /* ProfileHeaderCell.swift */; };
+		DCA87AB61E6766A900175922 /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA87AB51E6766A900175922 /* AccountCell.swift */; };
+		DCB008C51E68D8EB00626E2E /* Inventory_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB008C41E68D8EB00626E2E /* Inventory_VC.swift */; };
+		DCB0CA9E1E677B4900B22544 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB0CA9D1E677B4900B22544 /* DesignableView.swift */; };
+		DCB0CAA01E677CDD00B22544 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB0CA9F1E677CDD00B22544 /* PopUpView.swift */; };
+		DCB0CAA41E678D4B00B22544 /* TemperaturePrefPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB0CAA31E678D4B00B22544 /* TemperaturePrefPopUp.swift */; };
 		DCDDBC2A1DD7F72200E1B0C8 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDDBC291DD7F72200E1B0C8 /* Photos.swift */; };
 		DCDDBC2D1DD7F7C200E1B0C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDDBC2C1DD7F7C200E1B0C8 /* User.swift */; };
+		DCE94FBA1E63E83C00D4D3F0 /* temperatureIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE94FB91E63E83C00D4D3F0 /* temperatureIcon.png */; };
+		DCE94FBE1E63E97700D4D3F0 /* humidityIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE94FBD1E63E97700D4D3F0 /* humidityIcon.png */; };
+		DCE94FC01E63F3B700D4D3F0 /* PhotoDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE94FBF1E63F3B700D4D3F0 /* PhotoDataCell.swift */; };
+		DCE94FC21E63F4D600D4D3F0 /* MyFridge_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE94FC11E63F4D600D4D3F0 /* MyFridge_VC.swift */; };
+		DCE94FC41E64074900D4D3F0 /* MyFridgeItemStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE94FC31E64074900D4D3F0 /* MyFridgeItemStruct.swift */; };
+		DCEBBA3B1E6630D800992CC7 /* Profile_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEBBA3A1E6630D800992CC7 /* Profile_VC.swift */; };
+		DCEBBA3D1E66311E00992CC7 /* CubeInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEBBA3C1E66311E00992CC7 /* CubeInfoCell.swift */; };
+		DCED35B01E5AC78C003A5FF6 /* SensorDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCED35AF1E5AC78C003A5FF6 /* SensorDataCell.swift */; };
+		DCED35B21E5AD107003A5FF6 /* Cube.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCED35B11E5AD107003A5FF6 /* Cube.swift */; };
+		DCEF77B11E67984B0025F733 /* Order_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF77B01E67984B0025F733 /* Order_VC.swift */; };
+		DCEF77B31E679BCB0025F733 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCEF77B21E679BCB0025F733 /* Extensions.swift */; };
+		DCF3C14B1E661B4E00537966 /* battery80.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF3C1461E661B4E00537966 /* battery80.png */; };
+		DCF3C14C1E661B4E00537966 /* battery100.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF3C1471E661B4E00537966 /* battery100.png */; };
+		DCF3C14D1E661B4E00537966 /* battery20.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF3C1481E661B4E00537966 /* battery20.png */; };
+		DCF3C14E1E661B4E00537966 /* battery40.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF3C1491E661B4E00537966 /* battery40.png */; };
+		DCF3C14F1E661B4E00537966 /* battery60.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF3C14A1E661B4E00537966 /* battery60.png */; };
+		DCF3C1531E662E0A00537966 /* cameraCubeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF3C1501E662E0A00537966 /* cameraCubeIcon.png */; };
+		DCF3C1541E662E0A00537966 /* centralHubIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF3C1511E662E0A00537966 /* centralHubIcon.png */; };
+		DCF3C1551E662E0A00537966 /* sensorCubeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF3C1521E662E0A00537966 /* sensorCubeIcon.png */; };
 		FFD744EA579FDAF1295156DD /* Pods_FridgeViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90770DD0205F3FDC5B2C158 /* Pods_FridgeViewTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,14 +86,17 @@
 		DC3F85451DDAD04800F5FB16 /* LogIn_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogIn_VC.swift; sourceTree = "<group>"; };
 		DC3F85491DDAD10000F5FB16 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Pods/logo.png; sourceTree = "<group>"; };
 		DC3F854B1DDAE4D100F5FB16 /* SensorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorData.swift; sourceTree = "<group>"; };
-		DC3F854D1DDAE98C00F5FB16 /* Info_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Info_VC.swift; sourceTree = "<group>"; };
+		DC4BD4531E5EBB3800C58A49 /* CentralHubData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentralHubData.swift; sourceTree = "<group>"; };
+		DC4BD4551E5EBB4800C58A49 /* CentralHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CentralHub.swift; sourceTree = "<group>"; };
+		DC4BD45A1E5EBB7500C58A49 /* CameraData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraData.swift; sourceTree = "<group>"; };
 		DC4CCCAA1E428289006E42D9 /* RecipePuppy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipePuppy.swift; sourceTree = "<group>"; };
 		DC4CCCAD1E4286C5006E42D9 /* Recipe_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe_VC.swift; sourceTree = "<group>"; };
+		DC8A80421E555BCB0022E09D /* FoodItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
+		DC8A80441E555C5B0022E09D /* UserFoodItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFoodItem.swift; sourceTree = "<group>"; };
 		DCA09BF51E4C1B6D00B577A1 /* RecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		DCA1B6B21E4E5086000AFF41 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DCA5A95F1DD7B61700EA9E6C /* FridgeView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FridgeView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA5A9621DD7B61700EA9E6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DCA5A9641DD7B61700EA9E6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DCA5A9671DD7B61700EA9E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCA5A9691DD7B61700EA9E6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCA5A96C1DD7B61700EA9E6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,8 +107,33 @@
 		DCA5A97E1DD7B61700EA9E6C /* FridgeViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FridgeViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA5A9821DD7B61700EA9E6C /* FridgeViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridgeViewUITests.swift; sourceTree = "<group>"; };
 		DCA5A9841DD7B61700EA9E6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCA87AB31E67669D00175922 /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
+		DCA87AB51E6766A900175922 /* AccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
+		DCB008C41E68D8EB00626E2E /* Inventory_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inventory_VC.swift; sourceTree = "<group>"; };
+		DCB0CA9D1E677B4900B22544 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		DCB0CA9F1E677CDD00B22544 /* PopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		DCB0CAA31E678D4B00B22544 /* TemperaturePrefPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperaturePrefPopUp.swift; sourceTree = "<group>"; };
 		DCDDBC291DD7F72200E1B0C8 /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		DCDDBC2C1DD7F7C200E1B0C8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DCE94FB91E63E83C00D4D3F0 /* temperatureIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temperatureIcon.png; sourceTree = "<group>"; };
+		DCE94FBD1E63E97700D4D3F0 /* humidityIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = humidityIcon.png; sourceTree = "<group>"; };
+		DCE94FBF1E63F3B700D4D3F0 /* PhotoDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDataCell.swift; sourceTree = "<group>"; };
+		DCE94FC11E63F4D600D4D3F0 /* MyFridge_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFridge_VC.swift; sourceTree = "<group>"; };
+		DCE94FC31E64074900D4D3F0 /* MyFridgeItemStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFridgeItemStruct.swift; sourceTree = "<group>"; };
+		DCEBBA3A1E6630D800992CC7 /* Profile_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile_VC.swift; sourceTree = "<group>"; };
+		DCEBBA3C1E66311E00992CC7 /* CubeInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeInfoCell.swift; sourceTree = "<group>"; };
+		DCED35AF1E5AC78C003A5FF6 /* SensorDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorDataCell.swift; sourceTree = "<group>"; };
+		DCED35B11E5AD107003A5FF6 /* Cube.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cube.swift; sourceTree = "<group>"; };
+		DCEF77B01E67984B0025F733 /* Order_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order_VC.swift; sourceTree = "<group>"; };
+		DCEF77B21E679BCB0025F733 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		DCF3C1461E661B4E00537966 /* battery80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battery80.png; sourceTree = "<group>"; };
+		DCF3C1471E661B4E00537966 /* battery100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battery100.png; sourceTree = "<group>"; };
+		DCF3C1481E661B4E00537966 /* battery20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battery20.png; sourceTree = "<group>"; };
+		DCF3C1491E661B4E00537966 /* battery40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battery40.png; sourceTree = "<group>"; };
+		DCF3C14A1E661B4E00537966 /* battery60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battery60.png; sourceTree = "<group>"; };
+		DCF3C1501E662E0A00537966 /* cameraCubeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraCubeIcon.png; sourceTree = "<group>"; };
+		DCF3C1511E662E0A00537966 /* centralHubIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = centralHubIcon.png; sourceTree = "<group>"; };
+		DCF3C1521E662E0A00537966 /* sensorCubeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sensorCubeIcon.png; sourceTree = "<group>"; };
 		E90770DD0205F3FDC5B2C158 /* Pods_FridgeViewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FridgeViewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F01A1DBB469836915283A877 /* Pods-FridgeView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FridgeView.release.xcconfig"; path = "Pods/Target Support Files/Pods-FridgeView/Pods-FridgeView.release.xcconfig"; sourceTree = "<group>"; };
 		FD6B72B7770872914DBCC4BD /* Pods-FridgeViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FridgeViewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FridgeViewTests/Pods-FridgeViewTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,32 +190,66 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		DC4CCCAC1E4286A8006E42D9 /* Views */ = {
+		DC4BD4571E5EBB5300C58A49 /* CentralHub */ = {
 			isa = PBXGroup;
 			children = (
-				DCA5A9621DD7B61700EA9E6C /* AppDelegate.swift */,
-				DCA5A9641DD7B61700EA9E6C /* ViewController.swift */,
-				DC4CCCAD1E4286C5006E42D9 /* Recipe_VC.swift */,
-				DC12CC001E4E86FC00707C93 /* RecipeWebView_VC.swift */,
-				DC3F854D1DDAE98C00F5FB16 /* Info_VC.swift */,
-				DC3F85451DDAD04800F5FB16 /* LogIn_VC.swift */,
+				DC4BD4551E5EBB4800C58A49 /* CentralHub.swift */,
+				DC4BD4531E5EBB3800C58A49 /* CentralHubData.swift */,
 			);
-			name = Views;
+			name = CentralHub;
 			sourceTree = "<group>";
 		};
-		DCA09BF71E4C1B7600B577A1 /* Controllers */ = {
+		DC4BD4581E5EBB5A00C58A49 /* Cube */ = {
+			isa = PBXGroup;
+			children = (
+				DCED35B11E5AD107003A5FF6 /* Cube.swift */,
+				DC3F854B1DDAE4D100F5FB16 /* SensorData.swift */,
+				DC4BD45A1E5EBB7500C58A49 /* CameraData.swift */,
+			);
+			name = Cube;
+			sourceTree = "<group>";
+		};
+		DC4BD4591E5EBB6000C58A49 /* FoodItem */ = {
+			isa = PBXGroup;
+			children = (
+				DC8A80421E555BCB0022E09D /* FoodItem.swift */,
+				DC8A80441E555C5B0022E09D /* UserFoodItem.swift */,
+			);
+			name = FoodItem;
+			sourceTree = "<group>";
+		};
+		DC4CCCAC1E4286A8006E42D9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DC3F85451DDAD04800F5FB16 /* LogIn_VC.swift */,
+				DCE94FC11E63F4D600D4D3F0 /* MyFridge_VC.swift */,
+				DC4CCCAD1E4286C5006E42D9 /* Recipe_VC.swift */,
+				DC12CC001E4E86FC00707C93 /* RecipeWebView_VC.swift */,
+				DCB008C41E68D8EB00626E2E /* Inventory_VC.swift */,
+				DCEF77B01E67984B0025F733 /* Order_VC.swift */,
+				DCEBBA3A1E6630D800992CC7 /* Profile_VC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		DCA09BF71E4C1B7600B577A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				DCA09BF51E4C1B6D00B577A1 /* RecipeCell.swift */,
+				DCED35AF1E5AC78C003A5FF6 /* SensorDataCell.swift */,
+				DCE94FBF1E63F3B700D4D3F0 /* PhotoDataCell.swift */,
+				DCA87AB31E67669D00175922 /* ProfileHeaderCell.swift */,
+				DCA87AB51E6766A900175922 /* AccountCell.swift */,
+				DCEBBA3C1E66311E00992CC7 /* CubeInfoCell.swift */,
 			);
-			name = Controllers;
+			name = Views;
 			sourceTree = "<group>";
 		};
 		DCA5A9561DD7B61700EA9E6C = {
 			isa = PBXGroup;
 			children = (
 				DCA5A9611DD7B61700EA9E6C /* FridgeView */,
-				DC3F85491DDAD10000F5FB16 /* logo.png */,
+				DCE94FB01E63B3F600D4D3F0 /* Graphics */,
 				DCA5A9761DD7B61700EA9E6C /* FridgeViewTests */,
 				DCA5A9811DD7B61700EA9E6C /* FridgeViewUITests */,
 				DCA5A9601DD7B61700EA9E6C /* Products */,
@@ -183,8 +273,12 @@
 			children = (
 				DCA5A9661DD7B61700EA9E6C /* Main.storyboard */,
 				DCA1B6B21E4E5086000AFF41 /* TabBarController.swift */,
-				DCA09BF71E4C1B7600B577A1 /* Controllers */,
-				DC4CCCAC1E4286A8006E42D9 /* Views */,
+				DCA5A9621DD7B61700EA9E6C /* AppDelegate.swift */,
+				DCB0CA9D1E677B4900B22544 /* DesignableView.swift */,
+				DCEF77B21E679BCB0025F733 /* Extensions.swift */,
+				DCEF77B41E679BD30025F733 /* Pop Ups */,
+				DCA09BF71E4C1B7600B577A1 /* Views */,
+				DC4CCCAC1E4286A8006E42D9 /* Controllers */,
 				DCDDBC2B1DD7F73700E1B0C8 /* Model */,
 				DCA5A9691DD7B61700EA9E6C /* Assets.xcassets */,
 				DCA5A96B1DD7B61700EA9E6C /* LaunchScreen.storyboard */,
@@ -214,12 +308,58 @@
 		DCDDBC2B1DD7F73700E1B0C8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DCE94FC31E64074900D4D3F0 /* MyFridgeItemStruct.swift */,
 				DCDDBC291DD7F72200E1B0C8 /* Photos.swift */,
-				DC3F854B1DDAE4D100F5FB16 /* SensorData.swift */,
 				DCDDBC2C1DD7F7C200E1B0C8 /* User.swift */,
 				DC4CCCAA1E428289006E42D9 /* RecipePuppy.swift */,
+				DC4BD4591E5EBB6000C58A49 /* FoodItem */,
+				DC4BD4581E5EBB5A00C58A49 /* Cube */,
+				DC4BD4571E5EBB5300C58A49 /* CentralHub */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		DCE94FB01E63B3F600D4D3F0 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				DC3F85491DDAD10000F5FB16 /* logo.png */,
+				DCE94FBD1E63E97700D4D3F0 /* humidityIcon.png */,
+				DCE94FB91E63E83C00D4D3F0 /* temperatureIcon.png */,
+				DCF3C1571E662E1C00537966 /* Battery Icons */,
+				DCF3C1561E662E0E00537966 /* Device Icons */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		DCEF77B41E679BD30025F733 /* Pop Ups */ = {
+			isa = PBXGroup;
+			children = (
+				DCB0CA9F1E677CDD00B22544 /* PopUpView.swift */,
+				DCB0CAA31E678D4B00B22544 /* TemperaturePrefPopUp.swift */,
+			);
+			name = "Pop Ups";
+			sourceTree = "<group>";
+		};
+		DCF3C1561E662E0E00537966 /* Device Icons */ = {
+			isa = PBXGroup;
+			children = (
+				DCF3C1501E662E0A00537966 /* cameraCubeIcon.png */,
+				DCF3C1511E662E0A00537966 /* centralHubIcon.png */,
+				DCF3C1521E662E0A00537966 /* sensorCubeIcon.png */,
+			);
+			name = "Device Icons";
+			sourceTree = "<group>";
+		};
+		DCF3C1571E662E1C00537966 /* Battery Icons */ = {
+			isa = PBXGroup;
+			children = (
+				DCF3C1471E661B4E00537966 /* battery100.png */,
+				DCF3C1461E661B4E00537966 /* battery80.png */,
+				DCF3C14A1E661B4E00537966 /* battery60.png */,
+				DCF3C1491E661B4E00537966 /* battery40.png */,
+				DCF3C1481E661B4E00537966 /* battery20.png */,
+			);
+			name = "Battery Icons";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,9 +479,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC3F854A1DDAD10000F5FB16 /* logo.png in Resources */,
+				DCE94FBE1E63E97700D4D3F0 /* humidityIcon.png in Resources */,
+				DCF3C1541E662E0A00537966 /* centralHubIcon.png in Resources */,
 				DCA5A96D1DD7B61700EA9E6C /* LaunchScreen.storyboard in Resources */,
 				DCA5A96A1DD7B61700EA9E6C /* Assets.xcassets in Resources */,
 				DCA5A9681DD7B61700EA9E6C /* Main.storyboard in Resources */,
+				DCF3C14D1E661B4E00537966 /* battery20.png in Resources */,
+				DCF3C14C1E661B4E00537966 /* battery100.png in Resources */,
+				DCF3C14E1E661B4E00537966 /* battery40.png in Resources */,
+				DCF3C1551E662E0A00537966 /* sensorCubeIcon.png in Resources */,
+				DCF3C14F1E661B4E00537966 /* battery60.png in Resources */,
+				DCF3C14B1E661B4E00537966 /* battery80.png in Resources */,
+				DCF3C1531E662E0A00537966 /* cameraCubeIcon.png in Resources */,
+				DCE94FBA1E63E83C00D4D3F0 /* temperatureIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,16 +639,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4BD45B1E5EBB7500C58A49 /* CameraData.swift in Sources */,
+				DCB0CAA01E677CDD00B22544 /* PopUpView.swift in Sources */,
 				DCDDBC2D1DD7F7C200E1B0C8 /* User.swift in Sources */,
-				DC3F854E1DDAE98C00F5FB16 /* Info_VC.swift in Sources */,
+				DC4BD4541E5EBB3800C58A49 /* CentralHubData.swift in Sources */,
+				DCB0CAA41E678D4B00B22544 /* TemperaturePrefPopUp.swift in Sources */,
+				DCB0CA9E1E677B4900B22544 /* DesignableView.swift in Sources */,
 				DCA1B6B31E4E5086000AFF41 /* TabBarController.swift in Sources */,
+				DCEF77B31E679BCB0025F733 /* Extensions.swift in Sources */,
+				DC8A80451E555C5B0022E09D /* UserFoodItem.swift in Sources */,
+				DCB008C51E68D8EB00626E2E /* Inventory_VC.swift in Sources */,
 				DC4CCCAE1E4286C5006E42D9 /* Recipe_VC.swift in Sources */,
 				DC4CCCAB1E428289006E42D9 /* RecipePuppy.swift in Sources */,
-				DCA5A9651DD7B61700EA9E6C /* ViewController.swift in Sources */,
+				DC8A80431E555BCB0022E09D /* FoodItem.swift in Sources */,
+				DC4BD4561E5EBB4800C58A49 /* CentralHub.swift in Sources */,
 				DCA09BF61E4C1B6D00B577A1 /* RecipeCell.swift in Sources */,
+				DCA87AB41E67669D00175922 /* ProfileHeaderCell.swift in Sources */,
 				DC3F85461DDAD04800F5FB16 /* LogIn_VC.swift in Sources */,
+				DCEBBA3B1E6630D800992CC7 /* Profile_VC.swift in Sources */,
 				DCDDBC2A1DD7F72200E1B0C8 /* Photos.swift in Sources */,
+				DCEBBA3D1E66311E00992CC7 /* CubeInfoCell.swift in Sources */,
 				DCA5A9631DD7B61700EA9E6C /* AppDelegate.swift in Sources */,
+				DCE94FC01E63F3B700D4D3F0 /* PhotoDataCell.swift in Sources */,
+				DCA87AB61E6766A900175922 /* AccountCell.swift in Sources */,
+				DCE94FC21E63F4D600D4D3F0 /* MyFridge_VC.swift in Sources */,
+				DCED35B21E5AD107003A5FF6 /* Cube.swift in Sources */,
+				DCED35B01E5AC78C003A5FF6 /* SensorDataCell.swift in Sources */,
+				DCE94FC41E64074900D4D3F0 /* MyFridgeItemStruct.swift in Sources */,
+				DCEF77B11E67984B0025F733 /* Order_VC.swift in Sources */,
 				DC12CC011E4E86FC00707C93 /* RecipeWebView_VC.swift in Sources */,
 				DC3F854C1DDAE4D100F5FB16 /* SensorData.swift in Sources */,
 			);

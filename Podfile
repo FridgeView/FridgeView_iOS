@@ -9,6 +9,7 @@ target 'FridgeView' do
 
 	pod 'ParseLiveQuery'
 	pod 'Parse'
+    pod 'ParseUI'
 	pod 'Bolts'
     pod 'Alamofire'
 

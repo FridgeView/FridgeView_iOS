@@ -89,6 +89,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Bolts-Swift/BoltsSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Parse/Parse.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ParseLiveQuery/ParseLiveQuery.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ParseUI/ParseUI.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SocketRocket/SocketRocket.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -97,5 +98,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Bolts-Swift/BoltsSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Parse/Parse.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ParseLiveQuery/ParseLiveQuery.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ParseUI/ParseUI.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SocketRocket/SocketRocket.framework"
 fi

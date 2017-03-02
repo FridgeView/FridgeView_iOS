@@ -15,21 +15,28 @@ class RecipePuppy {
     
     class func getRecipes(ingredients : String, completion :@escaping ([Recipe]) -> Void){
         var recipes = [Recipe]()
-        Alamofire.request(website + ingredients).responseJSON {response in
-            if let JSON = response.result.value as? NSDictionary,
-                let results = JSON["results"] as? NSArray{
-                for i in 0..<results.count {
-                    if let res = results[i] as? [String:String] {
-                        if var title = res["title"] {
-                        title = String(title.characters.filter { !"\n\t\r".characters.contains($0) })
-                        recipes.append(Recipe(title: title, thumbnail: res["thumbnail"] ?? "", link: res["href"] ?? "", ingredients: res["ingredients"] ?? ""))
+        for i in 1..<6
+        {
+            Alamofire.request(website + ingredients + "&p=\(i)").responseJSON {response in
+                if let JSON = response.result.value as? NSDictionary,
+                    let results = JSON["results"] as? NSArray{
+                    print(website + ingredients + "&p=\(i)")
+                    for i in 0..<results.count {
+                        if let res = results[i] as? [String:String] {
+                            if var title = res["title"] {
+                                title = String(title.characters.filter { !"\n\t\r".characters.contains($0) })
+                                if let thumbnailLink = res["thumbnail"] {
+                                    recipes.append(Recipe(title: title, thumbnail: thumbnailLink, link: res["href"] ?? "", ingredients: res["ingredients"] ?? ""))
+                                }
+                                if (i==5){
+                                    completion(recipes)
+                                }
+                            }
                         }
                     }
                 }
-                completion(recipes)
             }
         }
-        
     }
     
 }

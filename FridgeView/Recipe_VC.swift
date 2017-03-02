@@ -19,15 +19,27 @@ class Recipe_VC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        self.recipes.removeAll()
+        UserFoodItem.getInventoryForUser { (userFoodItems) in
+            if let userFoodItems = userFoodItems {
+                var str = ""
+                for userFoodItem in userFoodItems {
+                    if let foodName = userFoodItem.foodItem?.foodName {
+                        str += foodName.replacingOccurrences(of: " ", with: "") + ","
+                    }
+                }
+                RecipePuppy.getRecipes(ingredients: str) { (result) in
+                    self.recipes = result
+                    self.tableView.reloadData()
+                }
+            }
+        }
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        RecipePuppy.getRecipes(ingredients: "garlic,onion,cheese,eggs") { (result) in
-            self.recipes = result
-            self.tableView.reloadData()
-        }
+    
     }
 
     override func didReceiveMemoryWarning() {
