@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:InventoryCell.swift">
+   </FileRef>
+   <FileRef
       location = "group:FridgeView.xcodeproj">
    </FileRef>
    <FileRef

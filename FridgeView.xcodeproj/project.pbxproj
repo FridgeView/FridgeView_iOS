@@ -55,6 +55,7 @@
 		DCF3C1531E662E0A00537966 /* cameraCubeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF3C1501E662E0A00537966 /* cameraCubeIcon.png */; };
 		DCF3C1541E662E0A00537966 /* centralHubIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF3C1511E662E0A00537966 /* centralHubIcon.png */; };
 		DCF3C1551E662E0A00537966 /* sensorCubeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF3C1521E662E0A00537966 /* sensorCubeIcon.png */; };
+		E2F4A12A1E775FF90075A41E /* InventoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F4A1291E775FF90075A41E /* InventoryCell.swift */; };
 		FFD744EA579FDAF1295156DD /* Pods_FridgeViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90770DD0205F3FDC5B2C158 /* Pods_FridgeViewTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +135,7 @@
 		DCF3C1501E662E0A00537966 /* cameraCubeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraCubeIcon.png; sourceTree = "<group>"; };
 		DCF3C1511E662E0A00537966 /* centralHubIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = centralHubIcon.png; sourceTree = "<group>"; };
 		DCF3C1521E662E0A00537966 /* sensorCubeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sensorCubeIcon.png; sourceTree = "<group>"; };
+		E2F4A1291E775FF90075A41E /* InventoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InventoryCell.swift; path = ../InventoryCell.swift; sourceTree = "<group>"; };
 		E90770DD0205F3FDC5B2C158 /* Pods_FridgeViewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FridgeViewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F01A1DBB469836915283A877 /* Pods-FridgeView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FridgeView.release.xcconfig"; path = "Pods/Target Support Files/Pods-FridgeView/Pods-FridgeView.release.xcconfig"; sourceTree = "<group>"; };
 		FD6B72B7770872914DBCC4BD /* Pods-FridgeViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FridgeViewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FridgeViewTests/Pods-FridgeViewTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 		DCA09BF71E4C1B7600B577A1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E2F4A1291E775FF90075A41E /* InventoryCell.swift */,
 				DCA09BF51E4C1B6D00B577A1 /* RecipeCell.swift */,
 				DCED35AF1E5AC78C003A5FF6 /* SensorDataCell.swift */,
 				DCE94FBF1E63F3B700D4D3F0 /* PhotoDataCell.swift */,
@@ -640,6 +643,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC4BD45B1E5EBB7500C58A49 /* CameraData.swift in Sources */,
+				E2F4A12A1E775FF90075A41E /* InventoryCell.swift in Sources */,
 				DCB0CAA01E677CDD00B22544 /* PopUpView.swift in Sources */,
 				DCDDBC2D1DD7F7C200E1B0C8 /* User.swift in Sources */,
 				DC4BD4541E5EBB3800C58A49 /* CentralHubData.swift in Sources */,

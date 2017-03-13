@@ -12,7 +12,7 @@ import Parse
 class FoodItem: PFObject, PFSubclassing {
     @NSManaged var foodName: String?
     @NSManaged var foodDescription: String?
-    @NSManaged var expDays: NSNumber?
+    @NSManaged var expDays: NSNumber? // days
     
     class func parseClassName() -> String  {
         return "FoodItem"

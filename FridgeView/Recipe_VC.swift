@@ -26,6 +26,7 @@ class Recipe_VC: UIViewController {
                 for userFoodItem in userFoodItems {
                     if let foodName = userFoodItem.foodItem?.foodName {
                         str += foodName.replacingOccurrences(of: " ", with: "") + ","
+
                     }
                 }
                 RecipePuppy.getRecipes(ingredients: str) { (result) in
