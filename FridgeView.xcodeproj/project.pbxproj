@@ -375,15 +375,12 @@
 		DCE94FB01E63B3F600D4D3F0 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD:FridgeView_iOS/FridgeView.xcodeproj/project.pbxproj
 				E2896D881E8C680800677354 /* RecipeTab.png */,
 				E2896D7C1E8C64CA00677354 /* InventoryTab.png */,
 				E2896D7D1E8C64CA00677354 /* ProfileTab.png */,
 				E2896D7E1E8C64CA00677354 /* MyFridgeTab.png */,
 				E2896D801E8C64CA00677354 /* OrderTab.png */,
 				E2896D561E8C4DB300677354 /* FridgeView.mov */,
-=======
->>>>>>> 13d51f64910f82ab30dfcf5c3c1db13bf0621fd0:FridgeView.xcodeproj/project.pbxproj
 				DC82FE061E89A6D10059E6E9 /* deleteIcon.png */,
 				DC3F85491DDAD10000F5FB16 /* logo.png */,
 				DCE94FBD1E63E97700D4D3F0 /* humidityIcon.png */,
@@ -547,11 +544,8 @@
 				DC3F854A1DDAD10000F5FB16 /* logo.png in Resources */,
 				DCE94FBE1E63E97700D4D3F0 /* humidityIcon.png in Resources */,
 				DC82FE071E89A6D10059E6E9 /* deleteIcon.png in Resources */,
-<<<<<<< HEAD:FridgeView_iOS/FridgeView.xcodeproj/project.pbxproj
 				E2896D821E8C64CA00677354 /* ProfileTab.png in Resources */,
 				E2896D851E8C64CA00677354 /* OrderTab.png in Resources */,
-=======
->>>>>>> 13d51f64910f82ab30dfcf5c3c1db13bf0621fd0:FridgeView.xcodeproj/project.pbxproj
 				DCF3C1541E662E0A00537966 /* centralHubIcon.png in Resources */,
 				DCA5A96D1DD7B61700EA9E6C /* LaunchScreen.storyboard in Resources */,
 				DCA5A96A1DD7B61700EA9E6C /* Assets.xcassets in Resources */,

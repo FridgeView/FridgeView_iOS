@@ -28,13 +28,8 @@ class Recipe_VC: UIViewController {
                         str += foodName.replacingOccurrences(of: " ", with: "+") + "%2C"
                     }
                 }
-<<<<<<< HEAD:FridgeView_iOS/FridgeView/Recipe_VC.swift
                 print(str)
                 Spoonular.getRecipes(ingredients: str){(result) in
-=======
-                
-                Spoonular.getRecipes(ingredients: "apples%2Cflour%2Csugar"){(result) in
->>>>>>> 13d51f64910f82ab30dfcf5c3c1db13bf0621fd0:FridgeView/Recipe_VC.swift
                     self.recipes = result
                     self.tableView.reloadData() 
                 }

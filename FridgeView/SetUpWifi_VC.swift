@@ -101,7 +101,7 @@ class SetUpWifi_VC: UIViewController {
                     self.present(alert, animated: true, completion: nil)
                 } else {
                     wifiPassword.resignFirstResponder()
-                    let qrCode = QRCode("{'Type':'Wifi','WifiName':'\(name)',WifiPassword:'\(password),'WifiEncryption':'\(encryptionType.selectedRow(inComponent: 0))','UserEmail':'\(userEmail)',UserPassword:'\(userPassword)'}")
+                    let qrCode = QRCode("{'Type':'Wifi','WifiName':'\(name)',WifiPassword:'\(password),'WifiEncryption':'\(encryptionType.selectedRow(inComponent: 0))','UserEmail':'\(userEmail)','UserPassword':'\(userPassword)'}")
                     if let qrImage = qrCode?.image {
                         qrView.image = qrImage
                         UIView.animate(withDuration: 0.5) {
