@@ -12,6 +12,7 @@ class Recipe_VC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     var recipes = [Recipe]()
     var clickedUrl : URL?
     
@@ -19,28 +20,40 @@ class Recipe_VC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        self.recipes.removeAll()
-        UserFoodItem.getInventoryForUser { (userFoodItems) in
-            if let userFoodItems = userFoodItems {
-                var str = ""
-                for userFoodItem in userFoodItems {
-                    if let foodName = userFoodItem.foodItem?.foodName {
-                        str += foodName.replacingOccurrences(of: " ", with: "+") + "%2C"
-                    }
-                }
-                print(str)
-                Spoonular.getRecipes(ingredients: str){(result) in
-                    self.recipes = result
-                    self.tableView.reloadData() 
-                }
-            }
-        }
-        
+        loader.hidesWhenStopped = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tableView.alpha = 0
+        loader.startAnimating()
+        reload()
+    }
     
+    func reload() {
+        self.recipes.removeAll()
+        DispatchQueue.global(qos: .userInitiated).async {
+            UserFoodItem.getInventoryForUser { (userFoodItems) in
+                if let userFoodItems = userFoodItems {
+                    var str = ""
+                    for userFoodItem in userFoodItems {
+                        if let foodName = userFoodItem.foodItem?.foodName {
+                            str += foodName.replacingOccurrences(of: " ", with: "+") + "%2C"
+                        }
+                    }
+                    print(str)
+                    Spoonular.getRecipes(ingredients: str){(result) in
+                        self.recipes = result
+                        DispatchQueue.main.async {
+                            self.tableView.alpha = 1
+                            self.tableView.reloadData()
+                            self.tableView.alpha = 1
+                            self.loader.stopAnimating() 
+                        }
+                    }
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

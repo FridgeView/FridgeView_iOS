@@ -10,6 +10,7 @@
 		06AAD795F90BEA80B8847BB4 /* Pods_FridgeViewUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D97E9ECD9E562CF2317B96A /* Pods_FridgeViewUITests.framework */; };
 		1DC1668F1C7AEEE45219B42F /* Pods_FridgeView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98F045FC853F9300F1BD773D /* Pods_FridgeView.framework */; };
 		DC12CC011E4E86FC00707C93 /* RecipeWebView_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC12CC001E4E86FC00707C93 /* RecipeWebView_VC.swift */; };
+		DC324DDF1EA8109D000625DA /* moreImg.png in Resources */ = {isa = PBXBuildFile; fileRef = DC324DDE1EA8109D000625DA /* moreImg.png */; };
 		DC3557141E6E89D0000B5C8B /* NavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3557131E6E89D0000B5C8B /* NavController.swift */; };
 		DC3F854A1DDAD10000F5FB16 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = DC3F85491DDAD10000F5FB16 /* logo.png */; };
 		DC3F854C1DDAE4D100F5FB16 /* SensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3F854B1DDAE4D100F5FB16 /* SensorData.swift */; };
@@ -30,6 +31,7 @@
 		DC82FE071E89A6D10059E6E9 /* deleteIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DC82FE061E89A6D10059E6E9 /* deleteIcon.png */; };
 		DC8A80431E555BCB0022E09D /* FoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A80421E555BCB0022E09D /* FoodItem.swift */; };
 		DC8A80451E555C5B0022E09D /* UserFoodItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8A80441E555C5B0022E09D /* UserFoodItem.swift */; };
+		DC9FFD561EAA845B00AA66B8 /* logoAnimation.mov in Resources */ = {isa = PBXBuildFile; fileRef = DC9FFD551EAA845B00AA66B8 /* logoAnimation.mov */; };
 		DCA09BF61E4C1B6D00B577A1 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA09BF51E4C1B6D00B577A1 /* RecipeCell.swift */; };
 		DCA1B6B31E4E5086000AFF41 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA1B6B21E4E5086000AFF41 /* TabBarController.swift */; };
 		DCA5A9631DD7B61700EA9E6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5A9621DD7B61700EA9E6C /* AppDelegate.swift */; };
@@ -51,8 +53,6 @@
 		DCCDECC21E6E5CA4008D84B3 /* SignUpPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCDECC11E6E5CA4008D84B3 /* SignUpPopUp.swift */; };
 		DCDDBC2A1DD7F72200E1B0C8 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDDBC291DD7F72200E1B0C8 /* Photos.swift */; };
 		DCDDBC2D1DD7F7C200E1B0C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCDDBC2C1DD7F7C200E1B0C8 /* User.swift */; };
-		DCE94FBA1E63E83C00D4D3F0 /* temperatureIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE94FB91E63E83C00D4D3F0 /* temperatureIcon.png */; };
-		DCE94FBE1E63E97700D4D3F0 /* humidityIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DCE94FBD1E63E97700D4D3F0 /* humidityIcon.png */; };
 		DCE94FC01E63F3B700D4D3F0 /* PhotoDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE94FBF1E63F3B700D4D3F0 /* PhotoDataCell.swift */; };
 		DCE94FC21E63F4D600D4D3F0 /* MyFridge_VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE94FC11E63F4D600D4D3F0 /* MyFridge_VC.swift */; };
 		DCE94FC41E64074900D4D3F0 /* MyFridgeItemStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE94FC31E64074900D4D3F0 /* MyFridgeItemStruct.swift */; };
@@ -67,15 +67,6 @@
 		DCF3C14D1E661B4E00537966 /* battery20.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF3C1481E661B4E00537966 /* battery20.png */; };
 		DCF3C14E1E661B4E00537966 /* battery40.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF3C1491E661B4E00537966 /* battery40.png */; };
 		DCF3C14F1E661B4E00537966 /* battery60.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF3C14A1E661B4E00537966 /* battery60.png */; };
-		DCF3C1531E662E0A00537966 /* cameraCubeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF3C1501E662E0A00537966 /* cameraCubeIcon.png */; };
-		DCF3C1541E662E0A00537966 /* centralHubIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF3C1511E662E0A00537966 /* centralHubIcon.png */; };
-		DCF3C1551E662E0A00537966 /* sensorCubeIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF3C1521E662E0A00537966 /* sensorCubeIcon.png */; };
-		E2896D571E8C4DB300677354 /* FridgeView.mov in Resources */ = {isa = PBXBuildFile; fileRef = E2896D561E8C4DB300677354 /* FridgeView.mov */; };
-		E2896D811E8C64CA00677354 /* InventoryTab.png in Resources */ = {isa = PBXBuildFile; fileRef = E2896D7C1E8C64CA00677354 /* InventoryTab.png */; };
-		E2896D821E8C64CA00677354 /* ProfileTab.png in Resources */ = {isa = PBXBuildFile; fileRef = E2896D7D1E8C64CA00677354 /* ProfileTab.png */; };
-		E2896D831E8C64CA00677354 /* MyFridgeTab.png in Resources */ = {isa = PBXBuildFile; fileRef = E2896D7E1E8C64CA00677354 /* MyFridgeTab.png */; };
-		E2896D851E8C64CA00677354 /* OrderTab.png in Resources */ = {isa = PBXBuildFile; fileRef = E2896D801E8C64CA00677354 /* OrderTab.png */; };
-		E2896D891E8C680800677354 /* RecipeTab.png in Resources */ = {isa = PBXBuildFile; fileRef = E2896D881E8C680800677354 /* RecipeTab.png */; };
 		FFD744EA579FDAF1295156DD /* Pods_FridgeViewTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E90770DD0205F3FDC5B2C158 /* Pods_FridgeViewTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +95,7 @@
 		A8239C8E1AC05326265ECC86 /* Pods-FridgeViewUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FridgeViewUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FridgeViewUITests/Pods-FridgeViewUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D29C13D64A227949FE29B806 /* Pods-FridgeView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FridgeView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FridgeView/Pods-FridgeView.debug.xcconfig"; sourceTree = "<group>"; };
 		DC12CC001E4E86FC00707C93 /* RecipeWebView_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeWebView_VC.swift; sourceTree = "<group>"; };
+		DC324DDE1EA8109D000625DA /* moreImg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = moreImg.png; sourceTree = "<group>"; };
 		DC3557131E6E89D0000B5C8B /* NavController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavController.swift; sourceTree = "<group>"; };
 		DC3F85491DDAD10000F5FB16 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Pods/logo.png; sourceTree = "<group>"; };
 		DC3F854B1DDAE4D100F5FB16 /* SensorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorData.swift; sourceTree = "<group>"; };
@@ -124,6 +116,7 @@
 		DC82FE061E89A6D10059E6E9 /* deleteIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deleteIcon.png; sourceTree = "<group>"; };
 		DC8A80421E555BCB0022E09D /* FoodItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodItem.swift; sourceTree = "<group>"; };
 		DC8A80441E555C5B0022E09D /* UserFoodItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserFoodItem.swift; sourceTree = "<group>"; };
+		DC9FFD551EAA845B00AA66B8 /* logoAnimation.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = logoAnimation.mov; sourceTree = "<group>"; };
 		DCA09BF51E4C1B6D00B577A1 /* RecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		DCA1B6B21E4E5086000AFF41 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		DCA5A95F1DD7B61700EA9E6C /* FridgeView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FridgeView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,8 +144,6 @@
 		DCCDECC11E6E5CA4008D84B3 /* SignUpPopUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpPopUp.swift; sourceTree = "<group>"; };
 		DCDDBC291DD7F72200E1B0C8 /* Photos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		DCDDBC2C1DD7F7C200E1B0C8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		DCE94FB91E63E83C00D4D3F0 /* temperatureIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = temperatureIcon.png; sourceTree = "<group>"; };
-		DCE94FBD1E63E97700D4D3F0 /* humidityIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = humidityIcon.png; sourceTree = "<group>"; };
 		DCE94FBF1E63F3B700D4D3F0 /* PhotoDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDataCell.swift; sourceTree = "<group>"; };
 		DCE94FC11E63F4D600D4D3F0 /* MyFridge_VC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFridge_VC.swift; sourceTree = "<group>"; };
 		DCE94FC31E64074900D4D3F0 /* MyFridgeItemStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFridgeItemStruct.swift; sourceTree = "<group>"; };
@@ -167,15 +158,6 @@
 		DCF3C1481E661B4E00537966 /* battery20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battery20.png; sourceTree = "<group>"; };
 		DCF3C1491E661B4E00537966 /* battery40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battery40.png; sourceTree = "<group>"; };
 		DCF3C14A1E661B4E00537966 /* battery60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = battery60.png; sourceTree = "<group>"; };
-		DCF3C1501E662E0A00537966 /* cameraCubeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cameraCubeIcon.png; sourceTree = "<group>"; };
-		DCF3C1511E662E0A00537966 /* centralHubIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = centralHubIcon.png; sourceTree = "<group>"; };
-		DCF3C1521E662E0A00537966 /* sensorCubeIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sensorCubeIcon.png; sourceTree = "<group>"; };
-		E2896D561E8C4DB300677354 /* FridgeView.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = FridgeView.mov; sourceTree = "<group>"; };
-		E2896D7C1E8C64CA00677354 /* InventoryTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = InventoryTab.png; sourceTree = "<group>"; };
-		E2896D7D1E8C64CA00677354 /* ProfileTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ProfileTab.png; sourceTree = "<group>"; };
-		E2896D7E1E8C64CA00677354 /* MyFridgeTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MyFridgeTab.png; sourceTree = "<group>"; };
-		E2896D801E8C64CA00677354 /* OrderTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OrderTab.png; sourceTree = "<group>"; };
-		E2896D881E8C680800677354 /* RecipeTab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RecipeTab.png; sourceTree = "<group>"; };
 		E90770DD0205F3FDC5B2C158 /* Pods_FridgeViewTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FridgeViewTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F01A1DBB469836915283A877 /* Pods-FridgeView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FridgeView.release.xcconfig"; path = "Pods/Target Support Files/Pods-FridgeView/Pods-FridgeView.release.xcconfig"; sourceTree = "<group>"; };
 		FD6B72B7770872914DBCC4BD /* Pods-FridgeViewTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FridgeViewTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FridgeViewTests/Pods-FridgeViewTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -332,6 +314,7 @@
 				DCA09BF71E4C1B7600B577A1 /* Views */,
 				DC4CCCAC1E4286A8006E42D9 /* Controllers */,
 				DCDDBC2B1DD7F73700E1B0C8 /* Model */,
+				DC9FFD551EAA845B00AA66B8 /* logoAnimation.mov */,
 				DCA5A9691DD7B61700EA9E6C /* Assets.xcassets */,
 				DCA5A96B1DD7B61700EA9E6C /* LaunchScreen.storyboard */,
 				DCA5A96E1DD7B61700EA9E6C /* Info.plist */,
@@ -375,18 +358,10 @@
 		DCE94FB01E63B3F600D4D3F0 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				E2896D881E8C680800677354 /* RecipeTab.png */,
-				E2896D7C1E8C64CA00677354 /* InventoryTab.png */,
-				E2896D7D1E8C64CA00677354 /* ProfileTab.png */,
-				E2896D7E1E8C64CA00677354 /* MyFridgeTab.png */,
-				E2896D801E8C64CA00677354 /* OrderTab.png */,
-				E2896D561E8C4DB300677354 /* FridgeView.mov */,
 				DC82FE061E89A6D10059E6E9 /* deleteIcon.png */,
+				DC324DDE1EA8109D000625DA /* moreImg.png */,
 				DC3F85491DDAD10000F5FB16 /* logo.png */,
-				DCE94FBD1E63E97700D4D3F0 /* humidityIcon.png */,
-				DCE94FB91E63E83C00D4D3F0 /* temperatureIcon.png */,
 				DCF3C1571E662E1C00537966 /* Battery Icons */,
-				DCF3C1561E662E0E00537966 /* Device Icons */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -401,16 +376,6 @@
 				DCC32DB61E6F99B3008FAAA0 /* ChangeDeviceNamePopUp.swift */,
 			);
 			name = "Pop Ups";
-			sourceTree = "<group>";
-		};
-		DCF3C1561E662E0E00537966 /* Device Icons */ = {
-			isa = PBXGroup;
-			children = (
-				DCF3C1501E662E0A00537966 /* cameraCubeIcon.png */,
-				DCF3C1511E662E0A00537966 /* centralHubIcon.png */,
-				DCF3C1521E662E0A00537966 /* sensorCubeIcon.png */,
-			);
-			name = "Device Icons";
 			sourceTree = "<group>";
 		};
 		DCF3C1571E662E1C00537966 /* Battery Icons */ = {
@@ -542,26 +507,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC3F854A1DDAD10000F5FB16 /* logo.png in Resources */,
-				DCE94FBE1E63E97700D4D3F0 /* humidityIcon.png in Resources */,
 				DC82FE071E89A6D10059E6E9 /* deleteIcon.png in Resources */,
-				E2896D821E8C64CA00677354 /* ProfileTab.png in Resources */,
-				E2896D851E8C64CA00677354 /* OrderTab.png in Resources */,
-				DCF3C1541E662E0A00537966 /* centralHubIcon.png in Resources */,
 				DCA5A96D1DD7B61700EA9E6C /* LaunchScreen.storyboard in Resources */,
 				DCA5A96A1DD7B61700EA9E6C /* Assets.xcassets in Resources */,
 				DCA5A9681DD7B61700EA9E6C /* Main.storyboard in Resources */,
 				DCF3C14D1E661B4E00537966 /* battery20.png in Resources */,
-				E2896D811E8C64CA00677354 /* InventoryTab.png in Resources */,
 				DCF3C14C1E661B4E00537966 /* battery100.png in Resources */,
 				DCF3C14E1E661B4E00537966 /* battery40.png in Resources */,
-				E2896D571E8C4DB300677354 /* FridgeView.mov in Resources */,
-				DCF3C1551E662E0A00537966 /* sensorCubeIcon.png in Resources */,
-				E2896D831E8C64CA00677354 /* MyFridgeTab.png in Resources */,
-				E2896D891E8C680800677354 /* RecipeTab.png in Resources */,
+				DC324DDF1EA8109D000625DA /* moreImg.png in Resources */,
 				DCF3C14F1E661B4E00537966 /* battery60.png in Resources */,
+				DC9FFD561EAA845B00AA66B8 /* logoAnimation.mov in Resources */,
 				DCF3C14B1E661B4E00537966 /* battery80.png in Resources */,
-				DCF3C1531E662E0A00537966 /* cameraCubeIcon.png in Resources */,
-				DCE94FBA1E63E83C00D4D3F0 /* temperatureIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

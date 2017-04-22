@@ -111,21 +111,26 @@ extension Profile_VC: UITableViewDelegate, UITableViewDataSource {
             }else if(indexPath.row == 1) {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cubeInfo", for: indexPath) as! CubeInfoCell
                 cell.cubeTitle.text = User.current()?.defaultCentralHub?.deviceName ?? ""
-                cell.icon.image = UIImage(named: "centralHubIcon.png")
-                cell.batteryIcon.image = UIImage(named: "battery80.png")
+                cell.icon.image = UIImage(named: "centralHubIcon")
+                cell.batteryIcon.image = nil
+                //cell.batteryIcon.image = UIImage(named: "battery80.png")
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cubeInfo", for: indexPath) as! CubeInfoCell
                 let currentCube = cubes[indexPath.row - 2] //2 cells down
                 cell.cubeTitle.text = currentCube.deviceName
                 if(currentCube.deviceType == 2) {
-                    cell.icon.image = UIImage(named: "sensorCubeIcon.png")
-                    if let sensorData = currentCube.sensorData?[0] {
-                        cell.batteryIcon.image = UIImage(named: getBatteryImage(battery: sensorData.battery))
-                    }
+                    cell.icon.image = UIImage(named: "sensorCubeIcon")
+                    cell.batteryIcon.image = nil
+//                    if currentCube.sensorData?.count > 0 {
+//                        if let sensorData = currentCube.sensorData?[0] {
+//                          cell.batteryIcon.image = UIImage(named: getBatteryImage(battery: sensorData.battery))
+//                        }
+//                    }
                     
                 } else if (currentCube.deviceType == 1) {
-                    cell.icon.image = UIImage(named: "cameraCubeIcon.png")
+                    cell.batteryIcon.image = nil
+                    cell.icon.image = UIImage(named: "cameraCubeIcon")
                 }
                 return cell
             }

@@ -12,7 +12,7 @@ class Inventory_VC: UIViewController {
     
     @IBOutlet weak var InventoryCollectionView : UICollectionView!
     var userInventory = [UserFoodItem]()
-    var clickedItem : FoodItem?
+    var clickedItem : UserFoodItem?
     var clickedName : String?
     var clickedDescription : String?
     var editFlag = false
@@ -31,6 +31,10 @@ class Inventory_VC: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        refresh()
+    }
+    
+    func refresh() {
         self.userInventory.removeAll()
         UserFoodItem.getInventoryForUser { (userFoodItems) in
             if let userFoodItems = userFoodItems {
@@ -40,10 +44,7 @@ class Inventory_VC: UIViewController {
                 self.InventoryCollectionView.reloadData()
             }
         }
-        
     }
-    
-    
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
@@ -70,7 +71,11 @@ class Inventory_VC: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
         alert.addAction(UIAlertAction(title: "Add Item", style: .default, handler: { (didClick) in
             let textField = alert.textFields![0] as UITextField
-            
+            UserFoodItem.addItem(nameOfItem: textField.text ?? "", completion: { (success) in
+                    if(success) {
+                        self.refresh()
+                    }
+                })
             }))
         self.present(alert, animated: true, completion: nil)
     }
@@ -91,15 +96,11 @@ extension Inventory_VC : UICollectionViewDelegate, UICollectionViewDataSource{
         
         let currentItem = userInventory[indexPath.item]
         
-        var formatter = DateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = "MM-dd-yyyy"
-        let createdDate: String = formatter.string(from: (currentItem.foodItem?.createdAt)!)
-        let expirationDate: Date?
         let percentPassed: Double
         if(currentItem.foodItem?.expDays != nil){
-            expirationDate = Calendar.current.date(byAdding: .day, value: currentItem.foodItem?.expDays as! Int, to: (currentItem.foodItem?.createdAt)!)
-            let expiredDate: String = formatter.string(from: expirationDate!)
-            let daysPassed = Date().days(from: (currentItem.foodItem?.createdAt)!)
+            let daysPassed = Date().days(from: (currentItem.createdAt)!)
             let expDays = Double((currentItem.foodItem?.expDays)!)
             percentPassed = Double(daysPassed)/expDays
         }else {
@@ -140,7 +141,7 @@ extension Inventory_VC : UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        clickedItem = userInventory[indexPath.item].foodItem
+        clickedItem = userInventory[indexPath.item]
         self.performSegue(withIdentifier: "itemSegue", sender: self)
     }
     
@@ -148,6 +149,7 @@ extension Inventory_VC : UICollectionViewDelegate, UICollectionViewDataSource{
         if (segue.identifier == "itemSegue") {
             if let dest = segue.destination as? Inventory_Item_VC {
                 dest.selectedItem = clickedItem
+                dest.userCreatedAt = clickedItem?.createdAt
             }
             
         }

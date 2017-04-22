@@ -11,12 +11,19 @@ import UIKit
 class Order_VC: UIViewController {
     @IBOutlet weak var webView: UIWebView!
 
+    @IBOutlet weak var loader: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loader.hidesWhenStopped = true
+        loader.startAnimating()
+        
         if let url = URL(string: "https://www.amazon.com/pantry")  {
             let request = URLRequest(url: url)
             webView.scalesPageToFit = true
             webView.loadRequest(request)
+            loader.stopAnimating()
+            
         }
     }
 

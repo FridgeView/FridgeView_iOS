@@ -39,15 +39,17 @@ class MyFridge_VC: UIViewController {
     var showWhatsNewCell = 0
     var newItems = [newItem]()
 
+    let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         dateFormatter.dateFormat = "MM/dd/YY hh:mm a"
-        xButton.alpha = 1
+        xButton.alpha = 0
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        fetchCubesForTable()
+        refreshControl.addTarget(self, action: #selector(MyFridge_VC.fetchCubesForTable), for: .valueChanged)
+        tableView.addSubview(refreshControl)
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,16 +60,6 @@ class MyFridge_VC: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         blackBackground.frame = self.view.frame
-        
-//        if let originalPhoto = originalPhoto,
-//        let startingFrame = originalPhoto.superview?.convert(originalPhoto.frame, to: nil) {
-//            let startingWidth = startingFrame.width
-//            let startingHeight = startingFrame.height
-//            let newHeight = (self.view.frame.width / startingWidth) * startingHeight
-//            let yPosition =  (self.view.frame.height / 2) - (newHeight / 2)
-//            self.openedImage.frame = CGRect(x: 0, y: yPosition, width: self.view.frame.width, height: newHeight)
-//            panTouchPoint = CGPoint()
-//        }
     }
     
     @IBAction func xClicked(_ sender: Any) {
@@ -79,8 +71,10 @@ class MyFridge_VC: UIViewController {
         fetchCubesForTable()
     }
     
+    
     func fetchCubesForTable() {
         if isLoading {
+            refreshControl.endRefreshing()
             return
         } else {
             isLoading = true
@@ -99,6 +93,7 @@ class MyFridge_VC: UIViewController {
             })
             group.notify(queue: DispatchQueue.main) {
                 print("done with dispatch")
+                self.refreshControl.endRefreshing()
                 self.fridgeItems.sort(by: {$0.date > $1.date})
                 UserFoodItem.getNewItemsForUser(completion: {[unowned self] (addedArray, deletedArray) in
                     self.newItems.removeAll()
@@ -133,8 +128,8 @@ class MyFridge_VC: UIViewController {
                     }
                 }
                 print("done getting camera")
-                self.group.leave()
             }
+            self.group.leave()
         }
         
     }
@@ -162,8 +157,8 @@ class MyFridge_VC: UIViewController {
                     self.plotPoints[cube.objectId ?? ""] = tempPlotArray
                 }
                 print("done getting sensor")
-                self.group.leave()
             }
+            self.group.leave()
         }
 
     }

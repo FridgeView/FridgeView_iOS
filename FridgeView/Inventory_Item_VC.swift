@@ -12,7 +12,8 @@ class Inventory_Item_VC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var selectedItem : FoodItem?
+    var selectedItem : UserFoodItem?
+    var userCreatedAt: Date?
     let titles = ["Description","Created At", "Expiration Date", "Days since created"]
     var information = [String?]()
     
@@ -20,7 +21,8 @@ class Inventory_Item_VC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        self.title = selectedItem?.foodName ?? "Item"
+        tableView.rowHeight = UITableViewAutomaticDimension 
+        self.title = selectedItem?.foodItem?.foodName ?? "Item"
     }
     
 
@@ -29,21 +31,20 @@ class Inventory_Item_VC: UIViewController {
         super.viewWillAppear(animated)
         var formatter = DateFormatter()
         formatter.dateFormat = "MM-dd-yyyy"
-        let createdDate: String = formatter.string(from: (selectedItem?.createdAt)!)
-        
+        let createdDate: String = formatter.string(from: userCreatedAt!)
             var expiredDate: String
         let expirationDate: Date?
-        if(selectedItem?.expDays != nil){
-            expirationDate = Calendar.current.date(byAdding: .day, value: selectedItem?.expDays as! Int, to: (selectedItem?.createdAt)!)
+        if(selectedItem?.foodItem?.expDays != nil){
+            expirationDate = Calendar.current.date(byAdding: .day, value: selectedItem?.foodItem?.expDays as! Int, to: (selectedItem?.createdAt)!)
             expiredDate = formatter.string(from: expirationDate!)
-            let expDays = Double((selectedItem?.expDays)!)
+            let expDays = Double((selectedItem?.foodItem?.expDays) ?? 0)
         }else {
             expiredDate = "None"
         }
         
         
-        let daysPassed = Date().days(from: (selectedItem?.createdAt)!)
-        information = [selectedItem?.foodDescription, createdDate, expiredDate, String(daysPassed)]
+        let daysPassed = Date().days(from: userCreatedAt!)
+        information = [selectedItem?.foodItem?.foodDescription, createdDate, expiredDate, String(daysPassed)]
     }
 }
 
@@ -60,6 +61,10 @@ extension Inventory_Item_VC : UITableViewDelegate, UITableViewDataSource{
         cell.titleLabel.text = titles[indexPath.item]
         cell.infoLabel.text = information[indexPath.item]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44.0
     }
     
 }

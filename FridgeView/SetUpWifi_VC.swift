@@ -12,8 +12,7 @@ import QRCode
 
 class SetUpWifi_VC: UIViewController {
     
-    @IBOutlet weak var encryptionType: UIPickerView!
-    let encryptionTypes = ["WPA2", "WEP", "WPA"]
+
     var userPassword = String()
     var userEmail = String()
     
@@ -32,8 +31,6 @@ class SetUpWifi_VC: UIViewController {
         super.viewDidLoad()
         overlayView.alpha = 0
         wifiPassword.delegate = self
-        encryptionType.delegate = self
-        encryptionType.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,8 +39,8 @@ class SetUpWifi_VC: UIViewController {
         refresh()
     }
     func timerMethod() {
-        print (encryptionTypes[encryptionType.selectedRow(inComponent: 0)])
         if(overlayView.alpha == 1) {
+            //UIScreen.main.brightness = 0.5
             User.current()?.refreshUser(completion: { (success) in
                 if ((User.current()?.defaultCentralHub) != nil) {
                     print("Hub found")
@@ -64,19 +61,19 @@ class SetUpWifi_VC: UIViewController {
         case .notReachable:
             settingsButton.isHidden = false
             isConnectedToWifi = false
-            topBanner.text = "Connect to Wifi to continue!"
+            topBanner.text = "No network! Connect to Wifi to continue!"
             topBanner.backgroundColor = UIColor.red
             
         case .reachableViaWWAN:
             settingsButton.isHidden = false
             isConnectedToWifi = false
-            topBanner.text = "Connect to Wifi to continue!"
+            topBanner.text = "On celluar! Connect to Wifi to continue!"
             topBanner.backgroundColor = UIColor.orange
             
         case .reachableViaWiFi:
             settingsButton.isHidden = true
             isConnectedToWifi = true
-            topBanner.text = "Currently connected to Wifi"
+            topBanner.text = "Currently connected to Wifi!"
             topBanner.backgroundColor = UIColor.green
             getWifiName()
         }
@@ -96,12 +93,22 @@ class SetUpWifi_VC: UIViewController {
             if let password = wifiPassword.text,
                 let name = wifiName.text {
                 if password.isEmpty {
-                    let alert = UIAlertController(title: "You must enter the password for your wifi network!", message: "", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    let alert = UIAlertController(title: "Are you sure your wifi has no password?", message: "", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+                    alert.addAction(UIAlertAction(title: "No password", style: .default, handler: { (pressed) in
+                        self.wifiPassword.resignFirstResponder()
+                        let qrCode = QRCode("{'Type':'Wifi','WifiName':'\(name)','WifiPassword':'\(password)','UserEmail':'\(self.userEmail)','UserPassword':'\(self.userPassword)'}")
+                        if let qrImage = qrCode?.image {
+                            self.qrView.image = qrImage
+                            UIView.animate(withDuration: 0.5) {
+                                self.overlayView.alpha = 1
+                            }
+                        }
+                    }))
                     self.present(alert, animated: true, completion: nil)
                 } else {
                     wifiPassword.resignFirstResponder()
-                    let qrCode = QRCode("{'Type':'Wifi','WifiName':'\(name)',WifiPassword:'\(password),'WifiEncryption':'\(encryptionType.selectedRow(inComponent: 0))','UserEmail':'\(userEmail)','UserPassword':'\(userPassword)'}")
+                    let qrCode = QRCode("{'Type':'Wifi','WifiName':'\(name)','WifiPassword':'\(password)','UserEmail':'\(userEmail)','UserPassword':'\(userPassword)'}")
                     if let qrImage = qrCode?.image {
                         qrView.image = qrImage
                         UIView.animate(withDuration: 0.5) {
@@ -138,19 +145,7 @@ class SetUpWifi_VC: UIViewController {
         }
     }
 }
-extension SetUpWifi_VC: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return encryptionTypes.count
-    }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-       return encryptionTypes[row]
-    }
-    
-}
+
 extension SetUpWifi_VC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

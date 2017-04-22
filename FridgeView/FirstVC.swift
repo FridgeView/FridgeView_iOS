@@ -23,22 +23,22 @@ class FirstVC: UIViewController {
         self.blurView.alpha = 0.82
         self.blurView.alpha = 0
         
-        let theURL = Bundle.main.url(forResource:"FridgeView", withExtension: "mov")
-        
-        avPlayer = AVPlayer(url: theURL!)
-        avPlayerLayer = AVPlayerLayer(player: avPlayer)
-        avPlayerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-        avPlayer.volume = 0
-        avPlayer.actionAtItemEnd = .none
-        
-        avPlayerLayer.frame = view.layer.bounds
-        view.backgroundColor = .clear
-        view.layer.insertSublayer(avPlayerLayer, at: 0)
+        if let theURL = Bundle.main.url(forResource:"logoAnimation", withExtension: "mov") {
+            avPlayer = AVPlayer(url: theURL)
+            avPlayerLayer = AVPlayerLayer(player: avPlayer)
+            avPlayerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
+            avPlayer.volume = 0
+            avPlayer.actionAtItemEnd = .none
+            avPlayerLayer.frame = view.layer.bounds
+            view.backgroundColor = .clear
+            view.layer.insertSublayer(avPlayerLayer, at: 0)
+    
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(playerItemDidReachEnd(notification:)),
                                                name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
                                                object: avPlayer.currentItem)
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

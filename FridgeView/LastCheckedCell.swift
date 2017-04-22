@@ -29,6 +29,7 @@ struct newItem {
 }
 class LastCheckedCell: UITableViewCell {
 
+    @IBOutlet weak var moreLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var itemsArray = [newItem]()
     weak var delegate: MyFridgeProtocol?
@@ -38,6 +39,17 @@ class LastCheckedCell: UITableViewCell {
             itemsArray[(sender as AnyObject).tag].isCorrect = true
         } else{
             itemsArray[(sender as AnyObject).tag].isCorrect = false
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.moreLabel.layer.cornerRadius = 10
+        self.moreLabel.clipsToBounds = true
+        if (itemsArray.count > 2) {
+            self.moreLabel.alpha = 1
+        } else {
+            self.moreLabel.alpha = 0
         }
     }
     
@@ -67,6 +79,21 @@ extension LastCheckedCell: UITableViewDelegate, UITableViewDataSource {
             })
         }
     }
+    
+   func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        removeMore()
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        removeMore()
+    }
+    
+    func removeMore() {
+     UIView.animate(withDuration: 0.3) { 
+            self.moreLabel.alpha = 0
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row < (itemsArray.count) {

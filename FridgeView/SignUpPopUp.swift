@@ -35,11 +35,11 @@ class SignUpPopUp: PopUpView {
         if password.text != confirmPassword.text {
             self.errorLabel.isHidden = false
             self.errorLabel.text = "Passwords do not match"
-        } else if (password.text?.characters.count ?? 0) > 6{
+        } else if (password.text?.characters.count ?? 0) <= 6{
             self.errorLabel.isHidden = false
             self.errorLabel.text = "Password must be greater than 6 characters"
         } else {
-            let newUser = PFUser()
+            let newUser = User()
             newUser.username = username.text ?? ""
             newUser.email = username.text ?? ""
             newUser.password = password.text ?? ""

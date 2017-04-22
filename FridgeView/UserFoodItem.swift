@@ -84,6 +84,17 @@ class UserFoodItem: PFObject, PFSubclassing {
         }
     }
     
+    class func addItem(nameOfItem: String, completion: @escaping (Bool) -> Void) {
+        PFCloud.callFunction(inBackground: "addUserItem", withParameters: ["item" : nameOfItem, "userID" : User.current()?.objectId ?? "" ]) { (success, error) in
+            if let error = error {
+                print(error)
+                completion(false)
+            } else {
+                completion(true)
+            }
+        }
+    }
+    
     func deleteItem(completion : @escaping (Bool) -> Void) {
         self.deleteInBackground { (success, error) in
             if let error = error {
