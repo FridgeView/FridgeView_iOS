@@ -33,6 +33,15 @@ class Cube: PFObject, PFSubclassing {
         return query
     }
     
+    func removeCube(completion : @escaping (Bool) -> Void) {
+        self.centralHub = nil
+        self.saveInBackground { (success, error) in
+            completion(success)
+        }
+
+    }
+    
+    
     func rename(name: String, completion : @escaping (Bool) -> Void) {
         self.deviceName = name
         self.saveInBackground { (success, error) in

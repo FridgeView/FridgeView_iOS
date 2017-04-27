@@ -44,6 +44,21 @@ class User: PFUser {
         }
     }
     
+    func removeCentralHub(completion : @escaping (Bool) -> Void) {
+        let oldCentralHub = self.defaultCentralHub
+        self.defaultCentralHub = nil
+        self.saveInBackground { (userSuccess, error) in
+            if userSuccess == true {
+                oldCentralHub?.removeUser(completion: { (hubSuccess) in
+                    completion(hubSuccess)
+                })
+            } else {
+                completion(false)
+            }
+        }
+    }
+    
+    
     func refreshUser(completion : @escaping (Bool) -> Void) {
         let query = User.userQuery()
         User.current()?.fetchIfNeededInBackground(block: { (user, error) in

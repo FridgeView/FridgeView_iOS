@@ -25,6 +25,13 @@ class CentralHub: PFObject, PFSubclassing {
         return query
     }
     
+    func removeUser(completion : @escaping (Bool) -> Void) {
+        self.user = nil
+        self.saveInBackground { (success, error) in
+            completion(success)
+        }
+    }
+    
     func rename(name: String, completion : @escaping (Bool) -> Void) {
         self.deviceName = name
         self.saveInBackground { (success, error) in

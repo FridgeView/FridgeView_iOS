@@ -75,6 +75,12 @@ extension Recipe_VC : UITableViewDataSource, UITableViewDelegate   {
         return recipes.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row >= recipes.count {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath) as! RecipeCell
+            cell.titleLabel.text = ""
+            cell.ingrediantLabel.text = ""
+            return cell
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath) as! RecipeCell
         cell.titleLabel.text = recipes[indexPath.row].title
         cell.ingrediantLabel.text = ""

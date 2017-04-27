@@ -14,9 +14,9 @@ protocol MyFridgeProtocol: class {
 }
 
 class MyFridge_VC: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
-
+    
     //handler for asycn function
     let group = DispatchGroup()
     var isLoading = false
@@ -35,10 +35,10 @@ class MyFridge_VC: UIViewController {
     var fridgeItems = [MyFridgeItem]()
     
     let dateFormatter = DateFormatter()
-
+    
     var showWhatsNewCell = 0
     var newItems = [newItem]()
-
+    
     let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
@@ -115,7 +115,7 @@ class MyFridge_VC: UIViewController {
             }
         }
     }
-
+    
     
     func fetchCameraCubesData() {
         //get sensorData
@@ -133,7 +133,7 @@ class MyFridge_VC: UIViewController {
         }
         
     }
-
+    
     
     func fetchSensorCubesData() {
         //get sensorData
@@ -160,7 +160,7 @@ class MyFridge_VC: UIViewController {
             }
             self.group.leave()
         }
-
+        
     }
     
     func fetchCentralHubData() {
@@ -173,7 +173,7 @@ class MyFridge_VC: UIViewController {
             print("done getting central hub")
             self.group.leave()
         })
-
+        
     }
     
     func panPhoto(_ panGesture: UIPanGestureRecognizer) {
@@ -185,7 +185,7 @@ class MyFridge_VC: UIViewController {
             panGesture.view?.center.y += delta
         case .ended:
             UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
-                   self.openedImage.center.y = self.originalCenterY
+                self.openedImage.center.y = self.originalCenterY
             }, completion: nil)
         default:
             break
@@ -194,13 +194,15 @@ class MyFridge_VC: UIViewController {
     
     func dismissPhoto() {
         if let originalPhoto = originalPhoto,
-        let startingFrame = originalPhoto.superview?.convert(originalPhoto.frame, to: nil){
-            UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+            let startingFrame = originalPhoto.superview?.convert(originalPhoto.frame, to: nil){
+            self.view.isUserInteractionEnabled = false
+            UIView.animate(withDuration: 0.55, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
                 self.xButton.alpha = 0
                 self.openedImage.frame = startingFrame
                 self.blackBackground.alpha = 0
-
+                
             }, completion: { (isComplete) in
+                self.view.isUserInteractionEnabled = true
                 self.openedImage.removeFromSuperview()
                 self.blackBackground.removeFromSuperview()
                 originalPhoto.alpha = 1
@@ -218,7 +220,8 @@ class MyFridge_VC: UIViewController {
             blackBackground.backgroundColor = UIColor.black
             blackBackground.alpha = 0
             UIApplication.shared.keyWindow?.addSubview(blackBackground)
-            UIApplication.shared.keyWindow?.addSubview(self.xButton)
+            UIApplication.shared.keyWindow?.addSubview(xButton)
+
             
             openedImage.contentMode = .scaleAspectFill
             openedImage.clipsToBounds = true
@@ -235,15 +238,16 @@ class MyFridge_VC: UIViewController {
             //let startingHeight = imgSender.frame.height
             let newHeight = self.view.frame.width * (480/800)
             let yPosition =  (self.view.frame.height / 2) - (newHeight / 2)
-    
-            imgSender.alpha = 0
             
-            UIView.animate(withDuration: 0.75, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
+            imgSender.alpha = 0
+            self.view.isUserInteractionEnabled = false
+            UIView.animate(withDuration: 0.55, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.5, options: .curveEaseOut, animations: {
                 self.xButton.alpha = 1
                 self.blackBackground.alpha = 1
                 self.openedImage.frame = CGRect(x: 0, y: yPosition, width: self.view.frame.width, height: newHeight)
             }, completion: { (isComplete) in
-               self.originalCenterY = self.openedImage.center.y
+                self.view.isUserInteractionEnabled = true
+                self.originalCenterY = self.openedImage.center.y
             })
             
         }
@@ -253,14 +257,14 @@ class MyFridge_VC: UIViewController {
         if(segue.identifier == "moreDetail") {
             if let destination_VC = segue.destination as? InDetail_VC {
                 destination_VC.passedData = clickedData
-                destination_VC.plots.removeAll()    
+                destination_VC.plots.removeAll()
                 if let plotPoints = self.plotPoints[clickedData.cube?.objectId ?? ""] {
                     destination_VC.plots = plotPoints
                 }
             }
         }
     }
-
+    
 }
 
 extension MyFridge_VC: UITableViewDelegate, UITableViewDataSource {
@@ -269,56 +273,60 @@ extension MyFridge_VC: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "spacerCell", for: indexPath) 
+            let cell = tableView.dequeueReusableCell(withIdentifier: "spacerCell", for: indexPath)
             return cell
         }
-        if indexPath.row == 1 && showWhatsNewCell == 1 {
+        else if indexPath.row == 1 && showWhatsNewCell == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "lastChecked", for: indexPath) as! LastCheckedCell
             cell.itemsArray = self.newItems
             cell.delegate = self
             cell.tableView.flashScrollIndicators()
             cell.tableView.delegate = cell
             cell.tableView.dataSource = cell
-            cell.tableView.reloadData() 
-            return cell
-        }
-        let currentFridgeItem = fridgeItems[indexPath.row - 1 - showWhatsNewCell]
-        if currentFridgeItem.dataType == .SensorData {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "sensorDataCell", for: indexPath) as! SensorDataCell
-           
-            if let sensorData =  currentFridgeItem.data as? SensorData {
-                cell.cellTitle.text = "\(sensorData.cube?.deviceName ?? "")"
-                cell.temperature.text = sensorData.temperature?.formatTemp()
-                cell.humidity.text = sensorData.humidity?.formatHum()
-                cell.dateLabel.text = "\(dateFormatter.string(from: sensorData.createdAt ?? Date()))"
-            }
-            return cell
-        } else if currentFridgeItem.dataType == .CameraData {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "photoDataCell", for: indexPath) as! PhotoDataCell
-            
-            if let cameraData =  currentFridgeItem.data as? CameraData {
-                cell.cellTitle.text = "\(cameraData.cube?.deviceName ?? "")"
-                cell.mainImage.file = cameraData.photoFile
-                cell.mainImage.loadInBackground()
-                cell.mainImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MyFridge_VC.animatePhoto(_:))))
-                cell.mainImage.isUserInteractionEnabled = true
-                cell.mainImage.clipsToBounds = true
-                cell.dateLabel.text = "\(dateFormatter.string(from: cameraData.createdAt ?? Date()))"
-            }
+            cell.tableView.reloadData()
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "photoDataCell", for: indexPath) as! PhotoDataCell
-            
-            if let photoData =  currentFridgeItem.data as? CentralHubData {
-                cell.cellTitle.text = "\(User.current()?.defaultCentralHub?.deviceName ?? "")"
-                cell.mainImage.file = photoData.photoFile
-                cell.mainImage.loadInBackground()
-                cell.mainImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MyFridge_VC.animatePhoto(_:))))
-                cell.mainImage.isUserInteractionEnabled = true
-                cell.mainImage.clipsToBounds = true
-                cell.dateLabel.text = "\(dateFormatter.string(from: photoData.createdAt ?? Date()))"
+            if (indexPath.row - 1 - showWhatsNewCell) >= fridgeItems.count {
+                return tableView.dequeueReusableCell(withIdentifier: "spacerCell", for: indexPath)
             }
-            return cell
+            let currentFridgeItem = fridgeItems[indexPath.row - 1 - showWhatsNewCell]
+            if currentFridgeItem.dataType == .SensorData {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "sensorDataCell", for: indexPath) as! SensorDataCell
+                
+                if let sensorData =  currentFridgeItem.data as? SensorData {
+                    cell.cellTitle.text = "\(sensorData.cube?.deviceName ?? "")"
+                    cell.temperature.text = sensorData.temperature?.formatTemp()
+                    cell.humidity.text = sensorData.humidity?.formatHum()
+                    cell.dateLabel.text = "\(dateFormatter.string(from: sensorData.createdAt ?? Date()))"
+                }
+                return cell
+            } else if currentFridgeItem.dataType == .CameraData {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "photoDataCell", for: indexPath) as! PhotoDataCell
+                
+                if let cameraData =  currentFridgeItem.data as? CameraData {
+                    cell.cellTitle.text = "\(cameraData.cube?.deviceName ?? "")"
+                    cell.mainImage.file = cameraData.photoFile
+                    cell.mainImage.loadInBackground()
+                    cell.mainImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MyFridge_VC.animatePhoto(_:))))
+                    cell.mainImage.isUserInteractionEnabled = true
+                    cell.mainImage.clipsToBounds = true
+                    cell.dateLabel.text = "\(dateFormatter.string(from: cameraData.createdAt ?? Date()))"
+                }
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "photoDataCell", for: indexPath) as! PhotoDataCell
+                
+                if let photoData =  currentFridgeItem.data as? CentralHubData {
+                    cell.cellTitle.text = "\(User.current()?.defaultCentralHub?.deviceName ?? "")"
+                    cell.mainImage.file = photoData.photoFile
+                    cell.mainImage.loadInBackground()
+                    cell.mainImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MyFridge_VC.animatePhoto(_:))))
+                    cell.mainImage.isUserInteractionEnabled = true
+                    cell.mainImage.clipsToBounds = true
+                    cell.dateLabel.text = "\(dateFormatter.string(from: photoData.createdAt ?? Date()))"
+                }
+                return cell
+            }
         }
     }
     
@@ -328,6 +336,9 @@ extension MyFridge_VC: UITableViewDelegate, UITableViewDataSource {
         } else if showWhatsNewCell == 1 {
             if(indexPath.row == 1) {
                 return 195.0
+            }
+            else if (indexPath.row - 2 >= fridgeItems.count) {
+                return 0
             }
             else if fridgeItems[indexPath.row - 2].dataType == .SensorData {
                 return 95.0
@@ -341,7 +352,7 @@ extension MyFridge_VC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row == 0 {
-             return
+            return
         }
         if showWhatsNewCell == 1  {
             if indexPath.row == 1 {
@@ -361,7 +372,7 @@ extension MyFridge_VC: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
-
+    
 }
 
 extension MyFridge_VC: MyFridgeProtocol {

@@ -20,6 +20,7 @@ class Profile_VC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()
+        tableView.allowsMultipleSelectionDuringEditing = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +29,10 @@ class Profile_VC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        refresh()
+    }
+    
+    func refresh() {
         User.current()?.refreshUser(completion: { (isComplete) in
             if (isComplete) {
                 Cube.getCubesForCentralHub(deviceType: nil, completion: { (cubesForCentralHub) in
@@ -72,6 +77,48 @@ extension Profile_VC: UITableViewDelegate, UITableViewDataSource {
         } else {
             return cubes.count + 2
         }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if indexPath.section == 1 && indexPath.row != 0 {
+            return true
+        }
+        return false
+    }
+
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteAction = UITableViewRowAction(style: .default, title: "Remove") { (action, indexPath) in
+            if (indexPath.section == 1 && indexPath.row == 1) {
+                //remove Central Hub
+                let alert = UIAlertController(title: "Are you sure?", message: "Removing this Central Hub will log you out!", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+                alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (clicked) in
+                    User.current()?.removeCentralHub(completion: { (success) in
+                        if success == true {
+                            User.current()?.logUserOut(completion: { (success2) in
+                                if(success2) {
+                                    self.performSegue(withIdentifier: "logOut", sender: self)
+                                }
+                            })
+                        }
+                    })
+                }))
+                self.present(alert, animated: true, completion: {
+                    self.tableView.setEditing(false, animated: true)
+                })
+            } else if (indexPath.section == 1 && indexPath.row != 0) {
+                //remove cube
+                let currentCube = self.cubes[indexPath.row - 2]
+                currentCube.removeCube(completion: { (success) in
+                    if(success) {
+                        self.refresh()
+                    }
+                })
+            }
+        }
+        return [deleteAction]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
